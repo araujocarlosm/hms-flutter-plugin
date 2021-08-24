@@ -18,10 +18,10 @@ import 'dart:convert';
 import 'dart:ui';
 
 class LocationAvailability {
-  int cellStatus;
-  int wifiStatus;
-  int elapsedRealtimeNs;
-  int locationStatus;
+  int? cellStatus;
+  int? wifiStatus;
+  int? elapsedRealtimeNs;
+  int? locationStatus;
 
   LocationAvailability({
     this.cellStatus,
@@ -30,7 +30,7 @@ class LocationAvailability {
     this.locationStatus,
   });
 
-  bool get isLocationAvailable => locationStatus < 1000;
+  bool get isLocationAvailable => locationStatus! < 1000;
 
   Map<String, dynamic> toMap() {
     return {
@@ -41,8 +41,8 @@ class LocationAvailability {
     };
   }
 
-  factory LocationAvailability.fromMap(Map<dynamic, dynamic> map) {
-    if (map == null) return null;
+  factory LocationAvailability.fromMap(Map<dynamic, dynamic>? map) {
+    if (map == null) return LocationAvailability();
 
     return LocationAvailability(
       cellStatus: map['cellStatus'],

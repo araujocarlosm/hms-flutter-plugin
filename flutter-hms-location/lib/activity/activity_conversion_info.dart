@@ -21,8 +21,8 @@ class ActivityConversionInfo {
   static const int ENTER_ACTIVITY_CONVERSION = 0;
   static const int EXIT_ACTIVITY_CONVERSION = 1;
 
-  int activityType;
-  int conversionType;
+  int? activityType;
+  int? conversionType;
 
   ActivityConversionInfo({
     this.activityType,
@@ -36,8 +36,8 @@ class ActivityConversionInfo {
     };
   }
 
-  factory ActivityConversionInfo.fromMap(Map<dynamic, dynamic> map) {
-    if (map == null) return null;
+  factory ActivityConversionInfo.fromMap(Map<dynamic, dynamic>? map) {
+    if (map == null) return ActivityConversionInfo();
 
     return ActivityConversionInfo(
       activityType: map['activityType'],

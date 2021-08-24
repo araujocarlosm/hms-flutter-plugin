@@ -18,18 +18,18 @@ import 'dart:convert';
 import 'dart:ui';
 
 class Location {
-  String provider;
-  double latitude;
-  double longitude;
-  double altitude;
-  double speed;
-  double bearing;
-  double horizontalAccuracyMeters;
-  double verticalAccuracyMeters;
-  double speedAccuracyMetersPerSecond;
-  double bearingAccuracyDegrees;
-  int time;
-  int elapsedRealtimeNanos;
+  String? provider;
+  double? latitude;
+  double? longitude;
+  double? altitude;
+  double? speed;
+  double? bearing;
+  double? horizontalAccuracyMeters;
+  double? verticalAccuracyMeters;
+  double? speedAccuracyMetersPerSecond;
+  double? bearingAccuracyDegrees;
+  int? time;
+  int? elapsedRealtimeNanos;
 
   Location({
     this.provider = 'HMS Mock Location',
@@ -63,8 +63,8 @@ class Location {
     };
   }
 
-  factory Location.fromMap(Map<dynamic, dynamic> map) {
-    if (map == null) return null;
+  factory Location.fromMap(Map<dynamic, dynamic>? map) {
+    if (map == null) return Location();
 
     return Location(
       provider: map["provider"] == null ? null : map["provider"],

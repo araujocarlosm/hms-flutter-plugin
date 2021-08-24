@@ -28,9 +28,9 @@ class GeofenceRequest {
   static const int COORDINATE_TYPE_WGS_84 = 1;
   static const int COORDINATE_TYPE_GCJ_02 = 0;
 
-  List<Geofence> geofenceList;
-  int initConversions;
-  int coordinateType;
+  List<Geofence>? geofenceList;
+  int? initConversions;
+  int? coordinateType;
 
   GeofenceRequest({
     this.geofenceList,
@@ -44,14 +44,14 @@ class GeofenceRequest {
 
   Map<String, dynamic> toMap() {
     return {
-      'geofenceList': geofenceList?.map((x) => x?.toMap())?.toList(),
+      'geofenceList': geofenceList?.map((x) => x.toMap()).toList(),
       'initConversions': initConversions,
       'coordinateType': coordinateType,
     };
   }
 
-  factory GeofenceRequest.fromMap(Map<dynamic, dynamic> map) {
-    if (map == null) return null;
+  factory GeofenceRequest.fromMap(Map<dynamic, dynamic>? map) {
+    if (map == null) return GeofenceRequest();
 
     return GeofenceRequest(
       geofenceList: List<Geofence>.from(

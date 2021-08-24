@@ -38,8 +38,8 @@ class ActivityIdentificationData {
     RUNNING
   ];
 
-  int identificationActivity;
-  int possibility;
+  int? identificationActivity;
+  int? possibility;
 
   ActivityIdentificationData({
     this.identificationActivity,
@@ -57,8 +57,8 @@ class ActivityIdentificationData {
     };
   }
 
-  factory ActivityIdentificationData.fromMap(Map<dynamic, dynamic> map) {
-    if (map == null) return null;
+  factory ActivityIdentificationData.fromMap(Map<dynamic, dynamic>? map) {
+    if (map == null) return ActivityIdentificationData();
 
     return ActivityIdentificationData(
       identificationActivity: map['identificationActivity'],

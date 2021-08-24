@@ -18,18 +18,18 @@ import 'dart:convert';
 import 'dart:ui';
 
 class LocationSettingsStates {
-  bool blePresent;
-  bool bleUsable;
-  bool gpsPresent;
-  bool gpsUsable;
-  bool locationPresent;
-  bool locationUsable;
-  bool networkLocationPresent;
-  bool networkLocationUsable;
-  bool hmsLocationPresent;
-  bool hmsLocationUsable;
-  bool gnssPresent;
-  bool gnssUsable;
+  bool? blePresent;
+  bool? bleUsable;
+  bool? gpsPresent;
+  bool? gpsUsable;
+  bool? locationPresent;
+  bool? locationUsable;
+  bool? networkLocationPresent;
+  bool? networkLocationUsable;
+  bool? hmsLocationPresent;
+  bool? hmsLocationUsable;
+  bool? gnssPresent;
+  bool? gnssUsable;
 
   LocationSettingsStates(
       {this.blePresent,
@@ -62,8 +62,8 @@ class LocationSettingsStates {
     };
   }
 
-  factory LocationSettingsStates.fromMap(Map<dynamic, dynamic> map) {
-    if (map == null) return null;
+  factory LocationSettingsStates.fromMap(Map<dynamic, dynamic>? map) {
+    if (map == null) return LocationSettingsStates();
 
     return LocationSettingsStates(
       blePresent: map['blePresent'],
